@@ -36,9 +36,9 @@ administrator/WebApplication4:
     - echo "Begin PostInstall"
     - echo "Unzip WebApplication4 to Application Directory"
     # Using Powershell version 2
-    #- PowerShell (New-Object -COM Shell.Application).NameSpace('"%APPDIR%"').CopyHere((New-Object -COM Shell.Application).NameSpace('"%DIStELLI_INSTALLHOME%\BlogEngine.NET 3.1 (web).zip"').Items(), 1564);
+     - PowerShell (New-Object -COM Shell.Application).NameSpace('"%APPDIR%"').CopyHere((New-Object -COM Shell.Application).NameSpace('"%DIStELLI_INSTALLHOME%\BlogEngine.NET 3.1 (web).zip"').Items(), 1564);
     # Using Powershell version 3+
-    - powershell add-type -assemblyname "system.io.compression.filesystem" ; [System.io.compression.zipfile]::ExtractToDirectory('"%DIStELLI_INSTALLHOME%\WebApplication4.zip"','"%APPDIR%"')
+    #- powershell add-type -assemblyname "system.io.compression.filesystem" ; [System.io.compression.zipfile]::ExtractToDirectory('"%DIStELLI_INSTALLHOME%\WebApplication4.zip"','"%APPDIR%"')
     - echo "---"
     - echo "Set Directory Attributes"
     - attrib -r %APPDIR%\App_Data /s /d
