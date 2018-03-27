@@ -5,9 +5,9 @@ gvishu2003/WebApplication4:
     # Define the TCP port you want the IIS application to listen on
     - PORT: "8085"
     # Define the Name for the IIS application
-    - SITE: "WebApplication4"
+    - SITE: WebApplication4
     # Define the Directory full path where the IIS application should reside
-    - APPDIR: "c:\WebApplication4"
+    - APPDIR: c:\WebApplication4
   PreInstall:
     - echo "Begin PreInstall"
     - echo "Install any IIS Prerequisites"
@@ -36,9 +36,9 @@ gvishu2003/WebApplication4:
     - echo "Begin PostInstall"
     - echo "Unzip WebApplication4 to Application Directory"
     # Using Powershell version 2
-     - PowerShell (New-Object -COM Shell.Application).NameSpace('"%APPDIR%"').CopyHere((New-Object -COM Shell.Application).NameSpace('"%DIStELLI_INSTALLHOME%\WebApplication4.zip"').Items(), 1564);
+    # - PowerShell (New-Object -COM Shell.Application).NameSpace('"%APPDIR%"').CopyHere((New-Object -COM Shell.Application).NameSpace('"%DIStELLI_INSTALLHOME%\WebApplication4.zip"').Items(), 1564);
     # Using Powershell version 3+
-    #- powershell add-type -assemblyname "system.io.compression.filesystem" ; [System.io.compression.zipfile]::ExtractToDirectory('"%DIStELLI_INSTALLHOME%\WebApplication4.zip"','"%APPDIR%"')
+    - powershell add-type -assemblyname "system.io.compression.filesystem" ; [System.io.compression.zipfile]::ExtractToDirectory('"%DIStELLI_INSTALLHOME%\WebApplication3.zip"','"%APPDIR%"')
     - echo "---"
     - echo "Set Directory Attributes"
     - attrib -r %APPDIR%\App_Data /s /d
