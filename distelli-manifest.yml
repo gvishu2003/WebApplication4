@@ -5,9 +5,9 @@ gvishu2003/WebApplication4:
     # Define the TCP port you want the IIS application to listen on
     - PORT: "8085"
     # Define the Name for the IIS application
-    - SITE: "WebApplication3"
+    - SITE: "WebApplication4"
     # Define the Directory full path where the IIS application should reside
-    - APPDIR: "c:\WebApplication3"
+    - APPDIR: "c:\WebApplication4"
   PreInstall:
     - echo "Begin PreInstall"
     - echo "Install any IIS Prerequisites"
